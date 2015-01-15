@@ -1,8 +1,7 @@
 // Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
+var api_url = "10.24.4.8:8080/";
+
 angular.module('app', ['ionic'])
 
     .run(function($ionicPlatform) {
@@ -38,13 +37,23 @@ angular.module('app', ['ionic'])
               url: "/actor", views: {'menuContent': {templateUrl: "templates/actor.html", controller: 'ActorCtrl'}}
           })
 
-          .state('app.citation', {
-              url: "/citation", views: {'menuContent': {templateUrl: "templates/citation.html", controller: 'CitationCtrl'}}
+          .state('app.quote', {
+              url: "/quote", views: {'menuContent': {templateUrl: "templates/quote.html", controller: 'QuoteCtrl'}}
           })
 
           $urlRouterProvider.otherwise('/home');
 
-    });
+    })
+
+    .factory("Actor", function($resource) {
+        return $resource(api_url+"actors/api/actor/:id/?format=json");
+    })
+    .factory("Character", function($resource) {
+        return $resource(api_url+"characters/api/character/:id/?format=json");
+    })
+    .factory("Quote", function($resource) {
+        return $resource(api_url+"quotes/api/quote/:id/?format=json");
+    })
 
 
 
