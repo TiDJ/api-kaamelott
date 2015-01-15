@@ -30,8 +30,16 @@ angular.module('app', ['ionic'])
             url: "/home", views: {'menuContent': {templateUrl: "templates/home.html"}}
           })
 
-          .state('app.personnage', {
-            url: "/personnage", views: {'menuContent': {templateUrl: "templates/character.html", controller: 'CharacterCtrl'}}
+          .state('app.character', {
+            url: "/character", views: {'menuContent': {templateUrl: "templates/character.html", controller: 'CharacterCtrl'}}
+          })
+
+          .state('app.actor', {
+              url: "/actor", views: {'menuContent': {templateUrl: "templates/actor.html", controller: 'ActorCtrl'}}
+          })
+
+          .state('app.citation', {
+              url: "/citation", views: {'menuContent': {templateUrl: "templates/citation.html", controller: 'CitationCtrl'}}
           })
 
           $urlRouterProvider.otherwise('/home');
