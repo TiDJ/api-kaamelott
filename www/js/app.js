@@ -1,8 +1,8 @@
 // Ionic Starter App
 
-var api_url = "10.24.4.8:8080/";
+var api_url = "http://10.24.0.53:8080/";
 
-angular.module('app', ['ionic'])
+angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Character'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -46,7 +46,7 @@ angular.module('app', ['ionic'])
     })
 
     .factory("Actor", function($resource) {
-        return $resource(api_url+"actors/api/actor/:id/?format=json");
+        return $resource(api_url+"quotes/api/v1/quote/:id/?format=json", {}, {'query': { method: 'GET' }});
     })
     .factory("Character", function($resource) {
         return $resource(api_url+"characters/api/character/:id/?format=json");
