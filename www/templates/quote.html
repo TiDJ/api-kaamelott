@@ -1,4 +1,9 @@
-<ion-view title="Acteur">
+<ion-view title="Quote">
     <ion-content>
-	</ion-content>
+        <div class="list">
+            <div class="item" ng-repeat="quote in quotes.objects">
+                {{quote.quote}} {{quote.character.first_name}} {{quote.character.last_name}}
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
