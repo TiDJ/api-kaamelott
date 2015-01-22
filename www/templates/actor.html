@@ -1,9 +1,7 @@
 <ion-view title="Acteur">
     <ion-content>
-        <div class="list">
-            <div class="item" ng-repeat="actor in actors.objects">
-                <a class="btn btn-default" href="#detailactor" ng-click="menu=detailactor; $root.current_actor={{actor}}">{{actor.first_name}} {{actor.last_name}}</a>
-            </div>
-        </div>
+        <ion-item ng-repeat="actor in actors.objects" ng-click="menu=detailactor; $root.current_actor={{actor}}" href="#detailactor" class="item-remove-animate"> 
+        	{{actor.first_name}} {{actor.last_name}} 
+        </ion-item>
     </ion-content>
 </ion-view>
