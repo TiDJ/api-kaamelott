@@ -1,9 +1,21 @@
 <ion-view title="Quote">
     <ion-content>
-        <div class="list">
-            <div class="item" ng-repeat="quote in quotes.objects">
-                {{quote.quote}} {{quote.character.first_name}} {{quote.character.last_name}}
-            </div>
-        </div>
+		<ion-list>
+			<div ng-repeat="quote in quotes.objects">
+				<ion-item class="item-stable"
+				ng-click="toggleGroup(quote)"
+				ng-class="{active: isGroupShown(quote)}">
+					<i class="icon" ng-class="isGroupShown(quote) ? 'ion-minus' : 'ion-plus'"></i>
+					&nbsp;
+					{{quote.title}}
+				</ion-item>
+				<ion-item  style="white-space: normal"  style="overflow:auto;" class="item-accordion" ng-show="isGroupShown(quote)">
+					{{quote.quote}}
+				</ion-item>
+				<ion-item  style="white-space: normal"  style="font-style: italic;" class="item-accordion" ng-show="isGroupShown(quote)">
+					- {{quote.character.first_name}} {{quote.character.last_name}}
+				</ion-item>
+			</div>
+		</ion-list>
     </ion-content>
 </ion-view>

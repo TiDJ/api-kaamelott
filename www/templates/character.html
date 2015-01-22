@@ -1,6 +1,9 @@
 <ion-view title="Personnage">
     <ion-content>
         <ion-item ng-repeat="character in characters.objects" href="#detailcharacter" ng-click="menu=detailcharacter; $root.current_character={{character}}" class="item-remove-animate"> 
+        	<div ng-if="character.image">
+				<img style="display:block; margin-right:15px; border-radius:25px; float:left; width:25px; height:25px;" src="{{api_url}}{{character.image}}" alt="{{character.last_name}}" width="300">
+			</div>
         	{{character.first_name}} {{character.last_name}}
     	</ion-item>
     </ion-content>

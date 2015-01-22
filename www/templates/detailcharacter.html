@@ -1,11 +1,23 @@
 <ion-view title="Détails d'un personnage">
 	<ion-content>
-		<h3>{{current_character.first_name}} {{current_character.last_name}}</h3>
-		<h4>{{current_character.title}} </h4>
-		<div ng-if="current_character.image">
-			<img src="{{api_url}}{{current_character.image}}" alt="{{current_character.last_name}}" width="300">
+		<div class="card">
+			<div class="item item-text-wrap">
+				<div ng-if="current_character.image">
+					<img style="max-width:100%;" src="{{api_url}}{{current_character.image}}" alt="{{current_character.last_name}}" width="300">
+				</div>
+			</div>		
+			<div style="white-space: normal"  class="item item-text-wrap">
+				<strong>Nom : </strong> {{current_character.first_name}} {{current_character.last_name}}
+			</div>
+			<div  style="white-space: normal" class="item item-text-wrap">
+				<strong>Titre : </strong> {{current_character.title}}
+			</div>
+			<div  style="white-space: normal" class="item item-text-wrap">
+				<strong>Origine : </strong> {{current_character.origin}}
+			</div>
+			<div style="white-space: normal" class="item item-divider">
+				<strong>Description : </strong><br><br>{{current_character.description}}
+			</div>
 		</div>
-		<div class="col-sm-8 col-xs-8">{{current_character.description}} </div>
-		<div class="col-sm-8 col-xs-8">{{current_character.origin}} </div>
 	</ion-content>
 </ion-view>
