@@ -1,11 +1,5 @@
 // Ionic Starter App
 
-// var api_url = "http://192.168.1.31:8080/";
-// var api_url_no_slash = "http://192.168.1.31:8080";
-
-var api_url = "http://10.24.4.13:8080/"
-var api_url_no_slash = "http://10.24.4.13:8080"
-
 angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Character', 'app.Quote'])
 
     .run(function($ionicPlatform) {
