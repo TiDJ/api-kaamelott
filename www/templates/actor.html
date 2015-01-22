@@ -1,11 +1,8 @@
 <ion-view title="Acteur">
     <ion-content>
         <div class="list">
-            <div class="item">
-                Alexandre Astier
-            </div>
-            <div class="item">
-                Lionel Astier
+            <div class="item" ng-repeat="actor in actors.objects">
+                <a class="btn btn-default" href="#detailactor" ng-click="menu=detailactor; $root.current_actor={{actor}}">{{actor.first_name}} {{actor.last_name}}</a>
             </div>
         </div>
     </ion-content>

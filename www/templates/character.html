@@ -1,0 +1,9 @@
+<ion-view title="Personnage">
+    <ion-content>
+        <div class="list">
+            <div class="item" ng-repeat="character in characters.objects">
+                <a class="btn btn-primary" href="#detailcharacter" ng-click="menu=detailcharacter; $root.current_character={{character}}">{{character.first_name}} {{character.last_name}}</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

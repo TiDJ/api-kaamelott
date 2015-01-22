@@ -1,0 +1,11 @@
+<ion-view title="Détails d'un acteur">
+	<ion-content>
+		<h3>{{current_actor.first_name}} {{current_actor.last_name}}</h3>
+		<div ng-if="current_actor.image">
+			<img src="{{api_url}}{{current_actor.image}}" alt="{{current_actor.last_name}}" width="300">
+		</div>
+		<div class="col-sm-8 col-xs-8">{{current_actor.description}} </div>
+		<div class="col-sm-8 col-xs-8">{{current_actor.birthdate}} </div>
+		<div class="col-sm-8 col-xs-8">{{current_actor.city}} </div>
+	</ion-content>
+</ion-view>
