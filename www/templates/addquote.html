@@ -1,0 +1,23 @@
+<ion-view title="Personnage">
+    <ion-content>
+    	<div class="list">
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Personnage
+				</div>
+				<select>
+					<option ng-repeat="character in characters.objects">{{character.first_name}} {{character.last_name}}</option>
+				</select>
+			</label>
+			<label class="item item-input">
+				<input type="text" placeholder="Titre">
+			</label>
+			<label class="item item-input">
+				<textarea placeholder="Citation"></textarea>
+			</label>
+			<button class="button button-block button-positive">
+				Envoyer
+			</button>
+		</div>
+    </ion-content>
+</ion-view>

@@ -32,7 +32,7 @@ angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Char
           })
 
           .state('app.detailcharacter', {
-              url: "/detailcharacter", views: {'menuContent': {templateUrl: "templates/detailcharacter.html", controller: 'DetailActorCtrl'}}
+              url: "/detailcharacter", views: {'menuContent': {templateUrl: "templates/detailcharacter.html", controller: 'DetailCharacterCtrl'}}
           })
 
           .state('app.actor', {
@@ -45,6 +45,10 @@ angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Char
 
           .state('app.quote', {
               url: "/quote", views: {'menuContent': {templateUrl: "templates/quote.html", controller: 'QuoteCtrl'}}
+          })
+
+          .state('app.addquote', {
+              url: "/addquote", views: {'menuContent': {templateUrl: "templates/addquote.html", controller: 'AddQuoteCtrl'}}
           })
 
           .state('app.test', {
