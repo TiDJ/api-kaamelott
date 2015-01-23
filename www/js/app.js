@@ -1,9 +1,9 @@
 /**
  * Controller APP Global
- * Déclare les différentes vues/pages de l'application
+ * Declares various parameters for the application, handle states for routes
  */
 
-angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Character', 'app.Quote'])
+angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Character', 'app.Quote', 'app.Splash'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -54,15 +54,11 @@ angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Char
               url: "/addquote", views: {'menuContent': {templateUrl: "templates/addquote.html", controller: 'AddQuoteCtrl'}}
           })
 
-          .state('app.test', {
-              url: "/test", views: {'menuContent': {templateUrl: "templates/test.html", controller: 'TestCtrl'}}
+          .state('app.splash', {
+              url: "/splash", views: {'menuContent': {templateUrl: "templates/splash.html", controller: 'SplashCtrl'}}
           })
 
-          // .state('app.quote', {
-          //     url: "/quote", views: {'menuContent': {templateUrl: "templates/quote.html", controller: 'QuoteCtrl'}}
-          // })
-
-          $urlRouterProvider.otherwise('/home');
+          $urlRouterProvider.otherwise('/splash');
 
     })
 

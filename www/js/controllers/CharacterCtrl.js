@@ -1,19 +1,18 @@
 /**
  * CharacterCtrl
- * - Controller des personnages, se connecte a l'API et recupérer les différentes personnages
+ * - Connects to the API and get characters
  */
 
 angular.module('app.Character', [])
-.controller("CharacterCtrl", function($scope, $rootScope, $http){
+.controller("CharacterCtrl", function($scope, $rootScope, $http, $timeout){
 	$rootScope.api_url = api_url_no_slash;
-	console.log("Salut");
+	
+	// Get data from api
 	$http.get(api_url+"characters/api/v1/Character/?format=json").
 	  success(function(data) {
 	  $rootScope.characters = data;
-	  console.log(data);
 	  }).
 	  error(function(data) {
-	  console.log(data);
 	  });
 })
 
