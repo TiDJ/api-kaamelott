@@ -1,21 +1,21 @@
-<ion-view title="Personnage">
+<ion-view title="Ajouter une citation" cache-view="false">
     <ion-content>
     	<div class="list">
 			<label class="item item-input item-select">
 				<div class="input-label">
 					Personnage
 				</div>
-				<select>
-					<option ng-repeat="character in characters.objects">{{character.first_name}} {{character.last_name}}</option>
+				<select ng-model="quote.character_id">
+					<option value="{{character.id}}" ng-repeat="character in characters.objects">{{character.first_name}} {{character.last_name}}</option>
 				</select>
 			</label>
 			<label class="item item-input">
-				<input type="text" placeholder="Titre">
+				<input type="text" placeholder="Titre" ng-model="quote.title">
 			</label>
 			<label class="item item-input">
-				<textarea placeholder="Citation"></textarea>
+				<textarea placeholder="Citation" ng-model="quote.quote"></textarea>
 			</label>
-			<button class="button button-block button-positive">
+			<button class="button button-block button-positive" ng-click="add_quote()">
 				Envoyer
 			</button>
 		</div>

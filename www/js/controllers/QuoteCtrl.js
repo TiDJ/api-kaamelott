@@ -24,8 +24,10 @@ angular.module('app.Quote', [])
 	};
 })
 
-.controller("AddQuoteCtrl", function($scope, $rootScope, $http){
+.controller("AddQuoteCtrl", function($scope, $rootScope, $http, $location, Quote){
 	$rootScope.api_url = api_url_no_slash;
+	
+	
 	$http.get(api_url+"characters/api/v1/Character/?format=json").
 	  success(function(data) {
 	  $rootScope.characters = data;
@@ -34,4 +36,20 @@ angular.module('app.Quote', [])
 	  error(function(data) {
 	  console.log(data);
 	  });
+
+	$scope.quote = new Quote();
+	console.log($scope.quote);
+	
+	$scope.add_quote = function(){
+		$scope.quote.$save(function (quote, headers) {
+	                    // Success
+	                    console.log("$save success " + JSON.stringify(quote));
+	                    console.log(quote);
+	                    $location.path('/quote')
+	                }, function (error) {
+	                    // failure
+	                    console.log(error.data.error);
+	                    console.log("$save failed " + JSON.stringify(error));
+	                });	
+	}
 });

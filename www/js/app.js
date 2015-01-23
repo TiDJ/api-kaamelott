@@ -70,7 +70,7 @@ angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Char
         return $resource(api_url+"characters/api/character/:id/?format=json");
     })
     .factory("Quote", function($resource) {
-        return $resource(api_url+"quotes/api/quote/:id/?format=json");
+        return $resource(api_url+"quotes/api/v1/Quote/:id/?format=json");
     })
 
 
