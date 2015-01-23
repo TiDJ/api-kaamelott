@@ -1,6 +1,8 @@
 /**
- * Created by Whysper on 15/01/2015.
+ * QuoteCtrl
+ * - Controller des acteurs, se connecte a l'API et recupérer les différentes acteurs
  */
+
 angular.module('app.Actor', [])
 .controller("ActorCtrl", function($scope, $http, $rootScope, Actor){
 

@@ -1,3 +1,7 @@
+/**
+ * CharacterCtrl
+ * - Controller des personnages, se connecte a l'API et recupérer les différentes personnages
+ */
 
 angular.module('app.Character', [])
 .controller("CharacterCtrl", function($scope, $rootScope, $http){

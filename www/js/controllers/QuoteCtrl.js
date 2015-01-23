@@ -1,3 +1,8 @@
+/**
+ * QuoteCtrl
+ * - Controller des citations, se connecte a l'API et recupérer les différentes citations
+ * - Permet l'ajout d'une citation en POST via envoie a l'API
+ */
 
 angular.module('app.Quote', [])
 .controller("QuoteCtrl", function($scope, $rootScope, $http){

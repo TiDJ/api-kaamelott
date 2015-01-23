@@ -1,4 +1,7 @@
-// Ionic Starter App
+/**
+ * Controller APP Global
+ * Déclare les différentes vues/pages de l'application
+ */
 
 angular.module('app', ['ionic',  'ngRoute', 'ngResource', 'app.Actor', 'app.Character', 'app.Quote'])
 
